@@ -1,54 +1,105 @@
-# React + TypeScript + Vite
+# Heart Data Visualization
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive map visualization of Medicare provider data, built with React, TypeScript, and Leaflet.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project visualizes Medicare provider data on an interactive map, allowing users to:
+- View provider locations across the United States
+- Filter providers by type
+- See detailed information about each provider
+- Explore clusters of providers in dense areas
 
-## Expanding the ESLint configuration
+## Data Source
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The data used in this visualization comes from publicly available Medicare provider data. The data includes:
+- Provider ZIP codes
+- Provider types
+- Medicare allowed amounts
+- Number of beneficiaries
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Technologies Used
+
+- React 18
+- TypeScript
+- Vite
+- Leaflet (for mapping)
+- Material-UI (for UI components)
+- React-Leaflet-MarkerCluster (for marker clustering)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/heart-data-visualization.git
+cd heart-data-visualization
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Process the data:
+```bash
+npm run process-data
+```
+
+4. Start the development server:
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+### Building for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+## Deployment
+
+This project is configured for deployment to GitHub Pages. To deploy:
+
+```bash
+npm run build
+npm run deploy
+```
+
+## Project Structure
+
+```
+heart-data-visualization/
+├── public/              # Static files and data
+├── src/                 # Source code
+│   ├── components/      # React components
+│   ├── types/          # TypeScript type definitions
+│   └── ...
+├── scripts/            # Data processing scripts
+└── ...
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Data provided by Medicare
+- Built with [React](https://reactjs.org/)
+- Maps powered by [Leaflet](https://leafletjs.com/)
+- UI components from [Material-UI](https://mui.com/)

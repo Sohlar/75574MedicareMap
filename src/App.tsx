@@ -21,15 +21,10 @@ function App() {
     const loadData = async () => {
       try {
         console.log('Loading processed data...');
-        const baseUrl = import.meta.env.BASE_URL || '/';
-        const response = await fetch(`${baseUrl}processed-data.json`);
-        console.log('Response status:', response.status);
-        console.log('Response headers:', Object.fromEntries(response.headers.entries()));
-        
+        const response = await fetch('/processed-data.json');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
         const jsonData = await response.json();
         console.log('Data loaded successfully:', jsonData.length, 'records');
         setData(jsonData);
