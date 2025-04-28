@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.leaflet-popup-content {
+  padding: 10px;
+}
+
+.leaflet-popup-content h3 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.leaflet-popup-content p {
+  margin: 4px 0;
+  color: #666;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.marker {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.marker:hover {
+  transform: scale(1.2);
+}
+
+.mapboxgl-popup-content {
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mapboxgl-popup-content h3 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.mapboxgl-popup-content p {
+  margin: 4px 0;
+  color: #666;
+}
